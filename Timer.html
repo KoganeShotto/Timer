@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<center>
+    <div id="time" style="font-size: 40px;font-weight: bold;color: red;background: #42ff00;width: 300px;height: 200px;">
+        10:00
+    </div>
+    <br>
+    <button onclick="start1()"style="margin-right: 15px">
+<img src="Start.png">
+    </button>
+    <button onclick="pause1()"style="margin-right: 15px">
+<img src="Pause.png">
+    </button>
+    <button onclick="stop1()">
+<img src="Stop.png">
+    </button>
+</center>
+</body>
+<script>
+ i=0
+    timer1=null
+    function start1() {
+     clearInterval(timer1)
+        i=0
+        timer1=setInterval(function () {
+            i=i+1
+            document.getElementById("time"). innerHTML=i
+        },1000)
+    }
+    function pause1() {
+       clearInterval(timer1)
+    }
+    function stop1() {
+     i=0
+        clearInterval(timer1)
+        document.getElementById("time"). innerHTML=i
+    }
+</script>
+</html>
